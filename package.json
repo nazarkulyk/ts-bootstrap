@@ -1,0 +1,51 @@
+{
+  "name": "ts-bootstrap",
+  "version": "0.8.0",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "lodash": "^4.17.11",
+    "source-map-support": "^0.5.12"
+  },
+  "scripts": {
+    "start": "nodemon build/app.js",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "ver": "tsc --version",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .ts src",
+    "clean:build": "rimraf build",
+    "clean:build:cache": "rimraf build .buildcache",
+    "clean": "npm run -s clean:build && npm run -s clean:build:cache"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/lodash": "^4.14.123",
+    "@types/node": "11.13.7",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-config-typescript": "^2.0.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "nodemon": "^1.18.11",
+    "prettier": "^1.17.0",
+    "rimraf": "^2.6.3",
+    "typescript": "3.4.5"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src/test/*",
+      "docs/*"
+    ],
+    "params": "--max_old_space_size=200 -r source-map-support/register",
+    "delay": "2500"
+  }
+}
